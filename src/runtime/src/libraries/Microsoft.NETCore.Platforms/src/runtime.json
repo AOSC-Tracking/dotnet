@@ -1040,6 +1040,53 @@
         "base"
       ]
     },
+    "aosc": {
+      "#import": [
+        "linux"
+      ]
+    },
+    "aosc-arm": {
+      "#import": [
+        "aosc",
+        "linux-arm"
+      ]
+    },
+    "aosc-arm64": {
+      "#import": [
+        "aosc",
+        "linux-arm64"
+      ]
+    },
+    "aosc-loongarch64": {
+      "#import": [
+        "aosc",
+        "linux-loongarch64"
+      ]
+    },
+    "aosc-mips64": {
+      "#import": [
+        "aosc",
+        "linux-mips64"
+      ]
+    },
+    "aosc-ppc64le": {
+      "#import": [
+        "aosc",
+        "linux-ppc64le"
+      ]
+    },
+    "aosc-riscv64": {
+      "#import": [
+        "aosc",
+        "linux-riscv64"
+      ]
+    },
+    "aosc-x64": {
+      "#import": [
+        "aosc",
+        "linux-x64"
+      ]
+    },
     "aot": {
       "#import": [
         "any"
