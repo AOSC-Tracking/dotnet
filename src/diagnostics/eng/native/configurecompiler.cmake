@@ -341,6 +341,15 @@ elseif (CLR_CMAKE_HOST_ARCH_ARM64)
 elseif (CLR_CMAKE_HOST_ARCH_LOONGARCH64)
   set(ARCH_HOST_NAME loongarch64)
   add_definitions(-DHOST_LOONGARCH64 -DHOST_64BIT)
+  # dotnet-unofficial-build: no easy way to set {C,CXX,LD}FLAGS for $CHOST
+  # *only*; these leak to $CBUILD and break crosscomponents' x64 build
+  # so we resort to putting them here in the sources
+  add_compile_options(-march=la64v1.0)
+  add_compile_options(-mtls-dialect=desc)
+  add_linker_flag(-Wl,-O1)
+  add_linker_flag(-Wl,--as-needed)
+  add_linker_flag(-Wl,-z,pack-relative-relocs)
+  add_linker_flag(-Wl,--hash-style=gnu)
 elseif (CLR_CMAKE_HOST_ARCH_RISCV64)
   set(ARCH_HOST_NAME riscv64)
   add_definitions(-DHOST_RISCV64 -DHOST_64BIT)
